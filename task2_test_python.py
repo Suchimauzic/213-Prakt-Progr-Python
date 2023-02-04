@@ -7,11 +7,13 @@ d = int(input("День недели (1-7): "))
 
 t = t_h * 60 + t_m              # Время начала разговора
 price = 0
+sTemp = 0
 
-for i in range(t, t + dt + 1):
+for i in range(t, t + dt):
     if d == 6 or d == 7:
         if 0 <= i < 480 or 1320 <= i <= 1439:
-            price += s - s * (0.1 + 0.2)
+            sTemp = s - s * 0.2
+            price += sTemp - sTemp * 0.1
         else:
             price += s - s * 0.1
     else:
